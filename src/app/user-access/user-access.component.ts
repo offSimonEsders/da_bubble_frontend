@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-user-access',
+  standalone: true,
+  imports: [RouterOutlet],
+  templateUrl: './user-access.component.html',
+  styleUrl: './user-access.component.scss'
+})
+export class UserAccessComponent {
+
+}

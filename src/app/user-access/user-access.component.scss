@@ -1,0 +1,13 @@
+.user_access_frame {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_container {
+    padding: 75px 75px 11px 75px;
+}
+
+.router_outlet {
+    display:flex;
+    justify-content: center;
+}

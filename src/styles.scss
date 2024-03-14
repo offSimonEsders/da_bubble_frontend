@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --background_color: #d7dcff;
+}
+
+body {
+    margin: 0;
+    max-width: 100dvw;
+    width: 100%;
+    height: 100dvh;
+    font-family: "Nunito";
+    background-color: var(--background_color);
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+
+.input_container {
+    display: flex;
+}
+
+.data_input {
+    padding: 18px 32px;
+    border: none;
+    border-radius: 100px;
+    background-color: var(--background_color);
+
+    &:hover {
+        outline: 1px solid #686868;
+    }
+
+    &:focus {
+        outline: 1px solid #9747FF;
+    }
+}
