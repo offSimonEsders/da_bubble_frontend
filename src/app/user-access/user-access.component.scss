@@ -85,6 +85,24 @@
     justify-content: center;
 }
 
+.to_legal_container {
+    display: flex;
+    align-self: center;
+    gap: 31px;
+    padding: 25px 0;
+
+    a {
+        cursor: pointer;
+        color: #797EF3;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
+
+}
+
 @keyframes animate_logo_position {
     100% {
         top: 0%;
