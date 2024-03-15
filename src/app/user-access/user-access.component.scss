@@ -85,6 +85,26 @@
     justify-content: center;
 }
 
+.to_register_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    gap: 10px;
+    top: 75px;
+    right: 75px;
+
+    a {
+        cursor: pointer;
+        color: #797EF3;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
+}
+
 .to_legal_container {
     display: flex;
     align-self: center;
