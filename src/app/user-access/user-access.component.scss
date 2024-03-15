@@ -9,7 +9,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    animation: animate_logo_position 3s forwards;
+    animation: animate_logo_position 3s 3s forwards;
 }
 
 .header_padding {
@@ -28,13 +28,41 @@
 .logo_img {
     width: 187px;
     height: 184px;
-    animation: animate_logo_img 3s forwards;
+    animation: animate_logo_img 3s 3s forwards;
+}
+
+.text_container {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+    overflow: hidden;
+    height: 70px;
+    width: 0;
+    animation: animate_container 4s ease-in-out 0.5s forwards;
 }
 
 .logo_text {
-    color: white;
-    font-size: 45px;
-    animation: animate_logo_text 3s forwards;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    position: absolute;
+    width: 470px;
+    height: 70px;
+    transform: translateX(-110%);
+    animation: animate_logo_text 4s ease-in-out 0.5s forwards;
+
+    svg {
+        height: 100%;
+        width: fit-content;
+        flex-shrink: 0;
+
+        path {
+            fill: white;
+            animation: change_text_color 2s ease-in-out 2s forwards;
+        }
+
+    }
 }
 
 .disapering_screen {
@@ -68,8 +96,42 @@
 }
 
 @keyframes animate_logo_text {
-    to {
-        font-size: 24px;
-        color: black;
+    50% {
+        transform: translateX(0%);
+    }
+    60% {
+        height: 70px;
+    }
+    100% {
+        transform: translateX(0%);
+        height: 30px;
+    }
+}
+
+@keyframes animate_container {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 470px;
+    }
+
+    60% {
+        width: 470px;
+    }
+
+    100% {
+        width: 191px;
+    }
+}
+
+@keyframes change_text_color {
+    75% {
+        fill: white;
+    }
+
+    100% {
+        fill: black;
     }
 }
