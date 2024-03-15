@@ -1,13 +1,101 @@
 .login_frame {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     max-width: 506px;
     width: calc(90dvw - 100px);
     max-height: 663px;
     height: calc(90dvh - 106px);
     padding: 50px 53px;
     border-radius: 30px;
+    gap: 43px;
+    box-shadow: 0 2px 10px #00000014;
     background-color: white;
 }
 
+.text_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.login_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.forgot_password {
+    cursor: pointer;
+    align-self: center;
+    font-size: 18px;
+    line-height: 21.6px;
+    color: #797EF3;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.or_container {
+    position: relative;
+
+    p {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        padding: 5px 15px;
+        background-color: white;
+    }
+
+    svg {
+        width: 100%;
+    }
+
+}
+
+.login_google {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 32px;
+    gap: 10px;
+    border-radius: 100px;
+    border: none;
+    background-color: var(--background_color);
+    
+    &:hover {
+        outline: 1px solid #797EF3;
+        
+        p {
+            font-weight: 700;
+        }
+    }
+
+    &:active {
+        outline-color: #686868;
+
+        p {
+            font-weight: 400;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        color: #444DF2;
+    }
+
+}
+
+.login_alternatives {
+    display: flex;
+    width: fit-content;
+    align-self: center;
+    gap: 30px;
+}
