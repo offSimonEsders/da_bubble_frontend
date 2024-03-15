@@ -131,6 +131,14 @@
     }
 }
 
+@keyframes animate_logo_position_830 {
+    100% {
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+}
+
 @keyframes animate_logo_img {
     to {
         width: 70px;
@@ -142,9 +150,26 @@
     50% {
         transform: translateX(0%);
     }
+
     60% {
         height: 70px;
     }
+
+    100% {
+        transform: translateX(0%);
+        height: 30px;
+    }
+}
+
+@keyframes animate_logo_text_830 {
+    50% {
+        transform: translateX(0%);
+    }
+
+    60% {
+        height: 50px;
+    }
+
     100% {
         transform: translateX(0%);
         height: 30px;
@@ -169,6 +194,24 @@
     }
 }
 
+@keyframes animate_container_830 {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 330px;
+    }
+
+    60% {
+        width: 330px;
+    }
+
+    100% {
+        width: 195px;
+    }
+}
+
 @keyframes change_text_color {
     75% {
         fill: white;
@@ -184,4 +227,42 @@
         z-index: -1;
         opacity: 0;
     }
+}
+
+@media (max-width: 830px) {
+
+    .header_container {
+        align-self: center;
+        animation-name: animate_logo_position_830;
+    }
+
+    .text_container {
+        animation-name: animate_container_830;
+    }
+
+    .logo_text {
+        height: 50px;
+        animation-name: animate_logo_text_830;
+    }
+
+    .logo_img {
+        width: 127px;
+        height: 124px;
+    }
+
+    .to_register_container {
+        position: static;
+        align-self: center;
+        align-items: center;
+        padding-top: 25px;
+
+        a {
+            border: 1px solid #797EF3;
+            border-radius: 25px;
+            padding: 5px 15px;
+            text-decoration: none !important;
+        }
+
+    }
+
 }
