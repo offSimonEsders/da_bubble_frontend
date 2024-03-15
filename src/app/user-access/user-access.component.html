@@ -1,6 +1,6 @@
-<section class="user_access_frame">
+<section class="user_access_frame" [ngClass]="{'user_access_frame_center': centerContent}" #accessframe>
     <div class="disapering_screen"></div>
-    <header class="header_container header_padding">
+    <header class="header_container header_container_animation header_padding" (animationend)="switchClass(header, 'header_container_animation', 'header_container_animationed')" #header>
         <div class="logo_big">
             <svg class="logo_img" width="188" height="184" viewBox="0 0 188 184" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -42,8 +42,8 @@
                     </clipPath>
                 </defs>
             </svg>
-            <div class="text_container">
-                <div class="logo_text">
+            <div class="text_container text_container_animation" (animationend)="switchClass(textcontainer, 'text_container_animation', 'text_container_animationed')" #textcontainer>
+                <div class="logo_text logo_text_animation" (animationend)="switchClass(logotext, 'logo_text_animation', 'logo_text_animationed')" #logotext>
                     <svg xmlns="http://www.w3.org/2000/svg" width="157" height="24" viewBox="0 0 157 24" fill="none">
                         <g clip-path="url(#clip0_2119_22177)">
                             <path
@@ -82,7 +82,7 @@
         </div>
     </header>
     <div class="header_padding" id="placeholder"></div>
-    <div class="router_outlet">
+    <div class="router_outlet" #routeroutlet>
         <router-outlet></router-outlet>
     </div>
     <div class="to_register_container">

@@ -5,7 +5,7 @@
     max-width: 506px;
     width: calc(90dvw - 100px);
     max-height: 663px;
-    height: calc(90dvh - 106px);
+    min-height: fit-content;
     padding: 50px 53px;
     border-radius: 30px;
     gap: 43px;
