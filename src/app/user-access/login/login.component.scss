@@ -99,3 +99,32 @@
     align-self: center;
     gap: 30px;
 }
+
+@media (max-width: 550px) {
+    .login_frame {
+        padding: 35px 20px;
+        width: calc(90dvw - 40px);
+        height: fit-content;
+        gap: 20px;
+    }
+
+    .login_form {
+        gap: 30px;
+    }
+
+    .text_container {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 410px) {
+    .login_alternatives {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+
+        button {
+            width: 100%;
+        }
+    }
+}
