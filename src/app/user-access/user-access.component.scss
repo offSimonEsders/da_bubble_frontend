@@ -9,11 +9,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    padding: 0;
     animation: animate_logo_position 3s 3s forwards;
 }
 
 .header_padding {
     padding: 75px 75px 11px 75px;
+}
+
+#placeholder {
     height: 70px;
 }
 
@@ -28,7 +32,7 @@
 .logo_img {
     width: 187px;
     height: 184px;
-    animation: animate_logo_img 3s 3s forwards;
+    animation: animate_logo_img 2.5s 3s forwards;
 }
 
 .text_container {
@@ -72,6 +76,7 @@
     width: 100dvw;
     height: 100dvh;
     z-index: 1;
+    animation: dissapear 2.5s 3s forwards;
     background: linear-gradient(rgba(121, 126, 243, 1), rgba(49, 58, 229, 1));
 }
 
@@ -122,7 +127,7 @@
     }
 
     100% {
-        width: 191px;
+        width: 195px;
     }
 }
 
@@ -133,5 +138,12 @@
 
     100% {
         fill: black;
+    }
+}
+
+@keyframes dissapear {
+    100% {
+        z-index: -1;
+        opacity: 0;
     }
 }
