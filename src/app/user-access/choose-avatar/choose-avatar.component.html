@@ -1,0 +1,25 @@
+<section class="avatar_frame">
+    <h1 class="text_big">Wähle deinen Avatar</h1>
+    <div class="choice_container">
+        <img class="img_preview" src="../../../assets/avatars/anonymus.svg" alt="">
+        <div class="example_container">
+            <div class="text_container">
+                <h2>Name Nachname</h2>
+                <p>Aus der Liste wählen</p>
+            </div>
+            <div class="avatars">
+                <img *ngFor="let i of [1, 2, 3, 4, 5, 6]" [src]="'../../../assets/avatars/avatar_' + i +'.svg'" alt="">
+            </div>
+        </div>
+        <div class="load_own_avatar_container">
+            <input style="display: none;" type="file" name="" id="load_own_avatar">
+            <p>eigenes Bild verwenden</p>
+            <label for="load_own_avatar">
+                <p class="secondary_button">
+                    Datei hochladen
+                </p>
+            </label>
+        </div>
+    </div>
+    <button class="primary_button">Weiter</button>
+</section>

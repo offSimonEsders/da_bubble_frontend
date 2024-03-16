@@ -1,12 +1,12 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [NgIf, ReactiveFormsModule],
+  imports: [NgIf, ReactiveFormsModule, RouterOutlet],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
@@ -24,5 +24,12 @@ export class RegisterComponent {
   })
 
   constructor (public router: Router) {
+    this.checkRoute();
+  }
+
+  checkRoute() {
+    if(!this.registerFG.valid) {
+      //this.router.navigate(['/register']);
+    }
   }
 }

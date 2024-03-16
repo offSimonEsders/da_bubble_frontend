@@ -1,4 +1,4 @@
-<section class="register_frame">
+<section class="register_frame" *ngIf="router.url === '/register'">
     <button type="button" class="back_button" (click)="router.navigate(['/'])">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_39492_490" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24"
@@ -107,3 +107,5 @@
         <button class="primary_button" [disabled]="!registerFG.valid">Weiter</button>
     </form>
 </section>
+
+<router-outlet></router-outlet>
