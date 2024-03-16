@@ -1,6 +1,7 @@
 .avatar_frame {
     display: flex;
     flex-direction: column;
+    position: relative;
     gap: 20px;
     padding: 40px 67px;
     max-width: calc(606px - 134px);
@@ -54,4 +55,81 @@
 .primary_button {
     width: fit-content;
     align-self: flex-end;
+}
+
+.avatars {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    cursor: pointer;
+    height: 64px;
+    width: 64px;
+    border-radius: 90px;
+    outline-offset: -5px;
+
+    &:hover {
+        outline: 5px solid lightgray;
+    }
+
+    &:active {
+        outline-color: rgb(226, 226, 226);
+    }
+
+}
+
+@media (max-width: 600px) {
+    .img_preview {
+        width: 120px;
+        height: 120px;
+    }
+
+    .avatar {
+        height: 56px;
+        width: 56px;
+    }
+}
+
+@media (max-width: 571px) {
+    .avatar_frame {
+        padding: 26px 21px;
+        max-width: calc(606px - 42px);
+        width: calc(90dvw - 42px);
+    }
+
+    .back_button {
+        top: 30px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 470px) {
+    .secondary_button {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 450px) {
+    .load_own_avatar_container {
+        width: 100%;
+        justify-content: center;
+
+        .info {
+            display: none;
+        }
+
+        label {
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .avatars {
+        justify-content: center;
+    }
 }

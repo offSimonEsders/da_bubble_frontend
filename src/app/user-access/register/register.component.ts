@@ -2,13 +2,14 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterOutlet } from '@angular/router';
+import { ChooseAvatarComponent } from "../choose-avatar/choose-avatar.component";
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [NgIf, ReactiveFormsModule, RouterOutlet],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+    selector: 'app-register',
+    standalone: true,
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.scss',
+    imports: [NgIf, ReactiveFormsModule, RouterOutlet, ChooseAvatarComponent]
 })
 export class RegisterComponent {
   nameInput: FormControl = new FormControl('', [Validators.required, Validators.minLength(6)]);

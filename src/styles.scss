@@ -80,6 +80,7 @@ p {
     font-size: 46px;
     font-style: normal;
     font-weight: 700;
+    padding: 0 24px;
 }
 
 .text_small {
@@ -148,6 +149,39 @@ p {
 
 }
 
+.back_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    border: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 90px;
+    left: 40px;
+    top: 53px;
+    background-color: transparent;
+
+    &:hover {
+        background-color: #ECEEFE;
+
+        svg {
+            path {
+                fill: #535AF1;
+            }
+        }
+
+    }
+
+    svg {
+        position: absolute;
+        height: 24px;
+        width: 24px;
+    }
+
+}
+
 @media (max-width: 550px) {
     .text_big {
         font-size: 38px;
@@ -160,6 +194,11 @@ p {
     .no_valid_input {
         position: static;
         transform: none;
+    }
+
+    .back_button {
+        top: 30px;
+        left: 20px;
     }
 }
 

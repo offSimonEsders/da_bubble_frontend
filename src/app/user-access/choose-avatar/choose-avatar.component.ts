@@ -1,5 +1,6 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-choose-avatar',
@@ -9,5 +10,8 @@ import { Component } from '@angular/core';
   styleUrl: './choose-avatar.component.scss'
 })
 export class ChooseAvatarComponent {
+  @Input() name?: string;
 
+  constructor(public router: Router) {
+  }
 }
