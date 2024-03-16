@@ -24,13 +24,4 @@ export class UserAccessComponent {
     }, 2000);
   }
 
-  @HostListener('document:DOMContentLoaded', ['$event'])
-  @HostListener('window: resize', ['$event'])
-  checkHeight() {
-    if (this.accessframe?.nativeElement.offsetHeight <= window.outerHeight) {
-      this.centerContent = true;
-    } else {
-      this.centerContent = false;
-    }
-  }
 }

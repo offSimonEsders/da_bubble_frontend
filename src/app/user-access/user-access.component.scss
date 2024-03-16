@@ -1,6 +1,7 @@
 .user_access_frame {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     min-height: 100dvh;
 }
 
@@ -15,6 +16,7 @@
     transform: translate(-50%, -50%);
     z-index: 10;
     padding: 0;
+    max-width: 1920px;
 }
 
 .header_container_animation {
