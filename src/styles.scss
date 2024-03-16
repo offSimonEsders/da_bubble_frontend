@@ -18,6 +18,11 @@ p {
     margin: 0;
 }
 
+.input_with_message {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 
 .input_container {
     display: flex;
@@ -52,6 +57,13 @@ p {
         }
     }
 
+}
+
+.no_valid_input {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    color: #ED1E79;
 }
 
 .icon_container {
@@ -140,8 +152,14 @@ p {
     .text_big {
         font-size: 38px;
     }
+
     .text_small {
         font-size: 17px;
+    }
+
+    .no_valid_input {
+        position: static;
+        transform: none;
     }
 }
 

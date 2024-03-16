@@ -97,6 +97,7 @@
         padding: 20px;
         max-width: calc(606px - 40px);
         width: calc(90dvw - 40px);
+        gap: 20px;
     }
 
     .back_button {
@@ -106,5 +107,9 @@
 
     .text_container {
         gap: 15px;
+    }
+
+    .register_form {
+        gap: 30px;
     }
 }
