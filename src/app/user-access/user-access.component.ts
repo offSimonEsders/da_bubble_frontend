@@ -1,11 +1,11 @@
-import { NgClass, NgStyle } from '@angular/common';
+import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-user-access',
   standalone: true,
-  imports: [RouterOutlet, NgStyle, NgClass],
+  imports: [RouterOutlet, NgStyle, NgClass, NgIf],
   templateUrl: './user-access.component.html',
   styleUrl: './user-access.component.scss'
 })
@@ -13,6 +13,9 @@ export class UserAccessComponent {
   @ViewChild('accessframe') accessframe?: ElementRef;
   @ViewChild('header') header?: ElementRef;
   centerContent: boolean = false;
+
+  constructor(public router: Router) {
+  }
 
   switchClass(element: HTMLElement, removeClass: string, addClass: string) {
     setTimeout(() => {
