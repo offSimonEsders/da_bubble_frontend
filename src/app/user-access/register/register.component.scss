@@ -91,3 +91,20 @@
     width: fit-content;
     align-self: flex-end;
 }
+
+@media (max-width: 550px) {
+    .register_frame {
+        padding: 20px;
+        max-width: calc(606px - 40px);
+        width: calc(90dvw - 40px);
+    }
+
+    .back_button {
+        top: 30px;
+        left: 20px;
+    }
+
+    .text_container {
+        gap: 15px;
+    }
+}
