@@ -14,18 +14,18 @@
     </button>
     <h1 class="text_big">Wähle deinen Avatar</h1>
     <div class="choice_container">
-        <img class="img_preview" src="../../../assets/avatars/anonymus.svg" alt="">
+        <img class="img_preview" [src]="previewImage" alt="">
         <div class="example_container">
             <div class="text_container">
                 <h2>{{name}}</h2>
                 <p>Aus der Liste wählen</p>
             </div>
             <div class="avatars">
-                <img class="avatar" *ngFor="let i of [1, 2, 3, 4, 5, 6]" [src]="'../../../assets/avatars/avatar_' + i +'.svg'" alt="">
+                <img class="avatar" *ngFor="let i of [1, 2, 3, 4, 5, 6]" (click)="setImage('../../../assets/avatars/avatar_' + i +'.svg')" [src]="'../../../assets/avatars/avatar_' + i +'.svg'" alt="">
             </div>
         </div>
         <div class="load_own_avatar_container">
-            <input style="display: none;" type="file" name="" id="load_own_avatar">
+            <input (input)="loadImage(imgInput.files)" style="display: none;" type="file" name="" accept="image/png, image/jpeg, image/svg" id="load_own_avatar" #imgInput>
             <p class="info">eigenes Bild verwenden</p>
             <label for="load_own_avatar">
                 <p class="secondary_button">
