@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { Router, RouterOutlet } from '@angular/router';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { ChooseAvatarComponent } from "../choose-avatar/choose-avatar.component";
 
 @Component({
@@ -25,13 +25,13 @@ export class RegisterComponent {
     checkbox: this.checkBox
   })
 
-  constructor(public router: Router) {
+  constructor(public router: Router, private route: ActivatedRoute) {
     this.checkRoute();
   }
 
   checkRoute() {
     if (!this.registerFG.valid) {
-      //this.router.navigate(['/register']);
+      this.router.navigate(['/register']);
     }
   }
 }

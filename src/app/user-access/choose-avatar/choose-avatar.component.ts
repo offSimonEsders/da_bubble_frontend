@@ -1,8 +1,7 @@
 import { BackendService } from './../../services/backend.service';
 import { NgFor } from '@angular/common';
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../models/user';
 
 @Component({
   selector: 'app-choose-avatar',
@@ -11,15 +10,22 @@ import { User } from '../../models/user';
   templateUrl: './choose-avatar.component.html',
   styleUrl: './choose-avatar.component.scss'
 })
-export class ChooseAvatarComponent {
+export class ChooseAvatarComponent implements OnInit {
   @Input() username?: string;
   @Input() email?: string;
   @Input() password?: string;
+  @Input() formValid: boolean = false;
   previewImage: string = '../../../assets/avatars/anonymus.png';
   customAvatar?: Blob = undefined;
   choosenAvatar?: string = undefined;
 
   constructor(public router: Router, private backendservice: BackendService) {
+  }
+
+  ngOnInit(): void {
+    if (this.username === '' || this.email === '' || this.password === '' || this.formValid === false) {
+      this.router.navigate(['/register']);
+    }
   }
 
   setImage(path: string) {
