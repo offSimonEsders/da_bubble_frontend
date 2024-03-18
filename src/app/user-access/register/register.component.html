@@ -107,4 +107,4 @@
     </form>
 </section>
 
-<app-choose-avatar [name]="nameInput.value" *ngIf="router.url === '/register/avatar'"></app-choose-avatar>
+<app-choose-avatar [username]="nameInput.value" [email]="emailInput.value" [password]="passwordInput.value" *ngIf="router.url === '/register/avatar'"></app-choose-avatar>
