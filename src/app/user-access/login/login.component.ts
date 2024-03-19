@@ -27,8 +27,15 @@ export class LoginComponent {
       const loginData: FormData = new FormData();
       loginData.append('email', this.email.value);
       loginData.append('password', this.password.value);
-      const resp = await (await this.backendService.login(loginData)).json();
-      localStorage.setItem('authtoken', resp['authtoken']);
+      const resp: Response = await this.backendService.login(loginData); //simonesders2003@gmail.com
+      this.responseIsOK(resp);
+    }
+  }
+
+  async responseIsOK(resp: Response) {
+    if(resp.ok) {
+      const data = await resp.json();
+      localStorage.setItem('authtoken', data['authtoken']);
     }
   }
 
