@@ -16,4 +16,13 @@ export class BackendService {
     return await fetch(environment.apiUrl + 'login/', { method: 'POST', body: loginData});
   }
 
+  async checkAuthToken() {
+    const authtoken = localStorage.getItem('authtoken');
+    if(authtoken) {
+      const resp = await fetch(environment.apiUrl + 'checkauthtoken/', { method: 'POST', headers: {Authorization: 'Token ' + authtoken}});
+      return resp.ok
+    }
+    return false;
+  }
+
 }

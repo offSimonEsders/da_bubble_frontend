@@ -27,7 +27,7 @@ export class LoginComponent {
       const loginData: FormData = new FormData();
       loginData.append('email', this.email.value);
       loginData.append('password', this.password.value);
-      const resp: Response = await this.backendService.login(loginData); //simonesders2003@gmail.com
+      const resp: Response = await this.backendService.login(loginData);
       this.responseIsOK(resp);
     }
   }
