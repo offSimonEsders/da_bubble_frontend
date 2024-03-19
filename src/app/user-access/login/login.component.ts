@@ -1,6 +1,7 @@
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { BackendService } from './../../services/backend.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent {
     password: this.password
   })
 
-  constructor(private backendService: BackendService) {
+  constructor(private backendService: BackendService, private router: Router) {
   }
 
   async login() {
@@ -36,6 +37,7 @@ export class LoginComponent {
     if(resp.ok) {
       const data = await resp.json();
       localStorage.setItem('authtoken', data['authtoken']);
+      this.router.navigate(['/home']);
     }
   }
 
