@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +8,12 @@ export class BackendService {
 
   constructor() { }
 
-  async registerNewUser(formData: FormData) {
-    return await fetch(environment.apiUrl + 'register/', { method: 'POST', body: formData});
+  async registerNewUser(registerData: FormData) {
+    return await fetch(environment.apiUrl + 'register/', { method: 'POST', body: registerData});
+  }
+
+  async login(loginData: FormData) {
+    return await fetch(environment.apiUrl + 'login/', { method: 'POST', body: loginData});
   }
 
 }

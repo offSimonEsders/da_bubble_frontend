@@ -3,9 +3,9 @@
         <h1 class="text_big">Anmeldung</h1>
         <p class="text_small">Wir empfehlen dir, die E-Mail-Adresse zu nutzen, die du bei der Arbeit verwendest.</p>
     </div>
-    <form class="login_form">
+    <form class="login_form" id="login_form" [formGroup]="loginFG">
         <div class="input_container">
-            <input class="data_input" type="text" placeholder="beispielname@email.com">
+            <input class="data_input" type="text" placeholder="beispielname@email.com" [formControl]="email">
             <div class="icon_container">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_39376_3245" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="input_container">
-            <input class="data_input" type="text" placeholder="Passwort">
+            <input class="data_input" type="password" placeholder="Passwort" [formControl]="password">
             <div class="icon_container">
                 <svg _ngcontent-ng-c2243767660="" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                     viewBox="0 0 24 24" fill="none">
@@ -63,7 +63,7 @@
         <p>Anmelden mit Google</p>
     </button>
     <div class="login_alternatives">
-        <button class="primary_button">Anmelden</button>
+        <button class="primary_button" type="submit" form="login_form" (click)="login()">Anmelden</button>
         <button class="secondary_button">Gäste-Login</button>
     </div>
 </section>
