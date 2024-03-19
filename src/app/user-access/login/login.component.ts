@@ -27,7 +27,8 @@ export class LoginComponent {
       const loginData: FormData = new FormData();
       loginData.append('email', this.email.value);
       loginData.append('password', this.password.value);
-      console.log(await (await this.backendService.login(loginData)).json());
+      const resp = await (await this.backendService.login(loginData)).json();
+      localStorage.setItem('authtoken', resp['authtoken']);
     }
   }
 
