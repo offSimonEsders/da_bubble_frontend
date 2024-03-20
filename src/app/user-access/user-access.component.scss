@@ -20,7 +20,7 @@
 }
 
 .header_container_animation {
-    animation: animate_logo_position 3s 3s forwards;
+    animation: animate_logo_position 1.5s 1.5s forwards;
 }
 
 .header_container_animationed {
@@ -48,7 +48,7 @@
 .logo_img {
     width: 187px;
     height: 184px;
-    animation: animate_logo_img 2.5s 3s forwards;
+    animation: animate_logo_img 1.25s 1.5s forwards;
 }
 
 .text_container {
@@ -62,7 +62,7 @@
 }
 
 .text_container_animation {
-    animation: animate_container 4s ease-in-out 0.5s forwards;
+    animation: animate_container 2s ease-in-out 0.5s forwards;
 }
 
 .text_container_animationed {
@@ -75,29 +75,25 @@
     align-items: flex-end;
     position: absolute;
     width: 470px;
-    height: 70px;
+    height: 100%;
+    background-image: url(../../assets/logo/logo_text_light.svg);
+    background-repeat: no-repeat;
+    background-size:contain;
+    transform: translateZ(0); 
     transform: translateX(-110%);
-
-    svg {
-        height: 100%;
-        width: fit-content;
-        flex-shrink: 0;
-
-        path {
-            fill: white;
-            animation: change_text_color 2s ease-in-out 2s forwards;
-        }
-
-    }
 }
 
 .logo_text_animation {
-    animation: animate_logo_text 4s ease-in-out 0.5s forwards;
+    opacity: 1;
+    image-rendering: crisp-edges;
+    animation: animate_logo_text 2s ease-in-out 0.5s forwards;
 }
 
 .logo_text_animationed {
     transform: translateX(0%);
     height: 30px !important;
+    width: 195px;
+    background-image: url(../../assets/logo/logo_text_dark.svg);
 }
 
 .disapering_screen {
@@ -107,7 +103,7 @@
     width: 100dvw;
     height: 100dvh;
     z-index: 1;
-    animation: dissapear 2.5s 3s forwards;
+    animation: dissapear 1.25s 1.5s forwards;
     background: linear-gradient(rgba(121, 126, 243, 1), rgba(49, 58, 229, 1));
 }
 
@@ -178,17 +174,17 @@
 }
 
 @keyframes animate_logo_text {
+
     50% {
         transform: translateX(0%);
-    }
-
-    60% {
         height: 70px;
+        background-image: url(../../assets/logo/logo_text_light.svg);
     }
 
     100% {
         transform: translateX(0%);
         height: 30px;
+        background-image: url(../../assets/logo/logo_text_dark.svg);
     }
 }
 
@@ -199,11 +195,13 @@
 
     60% {
         height: 50px;
+        background-image: url(../../assets/logo/logo_text_light.svg);
     }
 
     100% {
         transform: translateX(0%);
         height: 30px;
+        background-image: url(../../assets/logo/logo_text_dark.svg);
     }
 }
 
@@ -240,16 +238,6 @@
 
     100% {
         width: 195px;
-    }
-}
-
-@keyframes change_text_color {
-    75% {
-        fill: white;
-    }
-
-    100% {
-        fill: black;
     }
 }
 
