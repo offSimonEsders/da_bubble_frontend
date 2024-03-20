@@ -85,6 +85,7 @@
 
 .logo_text_animation {
     opacity: 1;
+    will-change: transform;
     image-rendering: crisp-edges;
     animation: animate_logo_text 2s ease-in-out 0.5s forwards;
 }
